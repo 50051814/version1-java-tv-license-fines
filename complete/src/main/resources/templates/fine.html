@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
-    <title>Todo - New Todo</title>
+    <title>Pay a fine</title>
 
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -49,12 +49,16 @@
 
             <a class="navbar-brand" style="right: 5px; position: absolute" href="/exit">LOGOUT</a>
 
-            <label for="lang"></label>
-      <select name="lang" id="chooser">
-        <option value="eng"onclick="changeLanguage('eng')">English</option>
-        <option value="sp" onclick="changeLanguage('es')">Spanish</option>
-        <option value="fr"onclick="changeLanguage('fr')">French</option>
-      </select> 
+      <!-- Language Chooser Dropdown -->
+      <label for="lang">
+        <select name="lang" id="chooser">
+          <option value="eng"onclick="changeLanguage('eng')">English</option>
+          <option value="sp" onclick="changeLanguage('es')">Spanish</option>
+          <option value="fr"onclick="changeLanguage('fr')">French</option>
+          <option value="we"onclick="changeLanguage('we')">Welsh</option>
+        </select> 
+      </label> 
+      
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -151,6 +155,13 @@
                        <!-- <button th:if="${fine[5] > fine[6]}" type="submit" th:href="@{/pay(id=${index})}" class="btn btn-success border border-dark rounded-0">Confirm Payment</button> -->
                         <button th:if="${fineAge > 28}" type="submit" th:href="@{/pay(id=${index})}" class="btn btn-success border border-dark rounded-0">Confirm Payment</button>
                         <button th:unless="${fineAge > 28}" type="submit" th:href="@{/pay(id=${index})}" class="btn btn-success border border-dark rounded-0">Pay &#163;65</button>
+
+                        <hr>
+
+                        <div class="d-flex flex-wrap align-items-center">
+                            <right> <img th:src="@{../images/global1.png}" width="15%" height="15%" /> </div></right>
+                         </div>
+
                     </div>
                 </form> 
             </div>
